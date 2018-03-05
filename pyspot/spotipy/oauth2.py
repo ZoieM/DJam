@@ -153,8 +153,10 @@ class SpotifyOAuth(object):
                 pass
 
     def _is_scope_subset(self, needle_scope, haystack_scope):
-        needle_scope = set(needle_scope.split()) if needle_scope else set()
-        haystack_scope = set(haystack_scope.split()) if haystack_scope else set()
+        if needle_scope == None and haystack_scope == None:
+            return True
+        needle_scope = set(needle_scope.split())
+        haystack_scope = set(haystack_scope.split())
         return needle_scope <= haystack_scope
 
     def is_token_expired(self, token_info):
