@@ -1,3 +1,299 @@
-{% for item in data %}
-    <p> {{ item }} </p>
-{% endfor %}
+<html>
+<head>
+	<!--Font-->
+	<link href="https://fonts.googleapis.com/css?family=Gugi|Lato" rel="stylesheet">
+	
+	<!--Device Width-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!--Bootstrap-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	<style>
+		#submit_button {
+			background-color: purple;
+			color: white;
+		}
+		div#title {
+			background-color: purple;
+			color: white;
+			font-family: 'Gugi', cursive;
+			font-size: 56
+		}
+		h2 {
+			font-family: 'Gugi', cursive;
+			font-size: 32
+		}
+		h4 {
+			font-weight: bold;
+			color: purple;
+			font-family: 'Lato', sans-serif;
+		}
+		p {
+			font-family: 'Lato', sans-serif;
+		}
+		form {
+			font-family: 'Lato', sans-serif;
+		}
+	</style>
+	
+</head>
+<body>
+<div class="panel panel-default">
+      <div class="panel-heading" id="title">DJam: Easy Music</div>
+</div>
+<div class="panel panel-default">
+      <div class="panel-heading"><h2>About DJam</h2></div>
+	  <div class="panel-body">
+	  <h4>What is DJam?</h4>
+	  <p>
+		Blah blah blah blah blah blah blah. Blah blah blah blah blah blah blah. Blah blah blah blah blah blah blah.
+		Blah blah blah blah blah blah blah. Blah blah blah blah blah blah blah blah blah blah blah blah blah.
+	  </p>
+	  <br>
+	  <h4>How does DJam work?</h4>
+	  <p>
+		Blah blah blah blah blah blah blah. Blah blah blah blah blah blah blah. Blah blah blah blah blah blah blah.
+		Blah blah blah blah blah blah blah. Blah blah blah blah blah blah blah blah blah blah blah blah blah.
+		Blah blah blah blah blah blah blah. Blah blah blah blah blah blah blah. Blah blah blah blah blah blah blah.
+		Blah blah blah blah blah blah blah. Blah blah blah blah blah blah blah blah blah blah blah blah blah.
+		Blah blah blah blah blah blah blah. Blah blah blah blah blah blah blah. Blah blah blah blah blah blah blah.
+	  </p>
+	  </div>
+</div>
+<div class="panel panel-default">
+      <div class="panel-heading"><h2>Generate a Playlist</h2></div>
+      <div class="panel-body">
+<form action = "http://localhost:5000/result" method="POST">
+<table>
+	<tr>
+		<th><h4>Artist</h4></th>
+		<th><h4>Rating</h4></th>
+	</tr>
+	<div class="form-group">
+	<tr>
+		<td><input class="form-control" type="text" name="artist_names[0]" required></td>
+		<td>
+			<select class="form-control" name="user_ratings[0]" required>
+				<option value="10">10</option>
+				<option value="9">9</option>
+				<option value="8">8</option>
+				<option value="7">7</option>
+				<option value="6">6</option>
+				<option value="5">5</option>
+				<option value="4">4</option>
+				<option value="3">3</option>
+				<option value="2">2</option>
+				<option value="1">1</option>
+			</select>
+		</td>
+	</tr>
+	</div>
+	<div class="form-group">
+	<tr>
+		<td><input class="form-control" type="text" name="artist_names[1]" required></td>
+		<td>
+			<select class="form-control" name="user_ratings[1]" required>
+				<option value="10">10</option>
+				<option value="9">9</option>
+				<option value="8">8</option>
+				<option value="7">7</option>
+				<option value="6">6</option>
+				<option value="5">5</option>
+				<option value="4">4</option>
+				<option value="3">3</option>
+				<option value="2">2</option>
+				<option value="1">1</option>
+			</select>
+		</td>
+	</tr>
+	</div>
+	<div class="form-group">
+	<tr>
+		<td><input class="form-control" type="text" name="artist_names[2]" required></td>
+		<td>
+			<select class="form-control" name="user_ratings[2]" required>
+				<option value="10">10</option>
+				<option value="9">9</option>
+				<option value="8">8</option>
+				<option value="7">7</option>
+				<option value="6">6</option>
+				<option value="5">5</option>
+				<option value="4">4</option>
+				<option value="3">3</option>
+				<option value="2">2</option>
+				<option value="1">1</option>
+			</select>
+		</td>
+	</tr>
+	</div>
+	<div class="form-group">
+	<tr>
+		<td><input class="form-control" type="text" name="artist_names[3]" required></td>
+		<td>
+			<select class="form-control" name="user_ratings[3]" required>
+				<option value="10">10</option>
+				<option value="9">9</option>
+				<option value="8">8</option>
+				<option value="7">7</option>
+				<option value="6">6</option>
+				<option value="5">5</option>
+				<option value="4">4</option>
+				<option value="3">3</option>
+				<option value="2">2</option>
+				<option value="1">1</option>
+			</select>
+		</td>
+	</tr>
+	</div>
+	<div class="form-group">
+	<tr>
+		<td><input class="form-control" type="text" name="artist_names[4]" required></td>
+		<td>
+			<select class="form-control" name="user_ratings[4]" required>
+				<option value="10">10</option>
+				<option value="9">9</option>
+				<option value="8">8</option>
+				<option value="7">7</option>
+				<option value="6">6</option>
+				<option value="5">5</option>
+				<option value="4">4</option>
+				<option value="3">3</option>
+				<option value="2">2</option>
+				<option value="1">1</option>
+			</select>
+		</td>
+	</tr>
+	</div>
+	<div class="form-group">
+	<tr>
+		<td><input class="form-control" type="text" name="artist_names[5]" required></td>
+		<td>
+			<select class="form-control" name="user_ratings[5]" required>
+				<option value="10">10</option>
+				<option value="9">9</option>
+				<option value="8">8</option>
+				<option value="7">7</option>
+				<option value="6">6</option>
+				<option value="5">5</option>
+				<option value="4">4</option>
+				<option value="3">3</option>
+				<option value="2">2</option>
+				<option value="1">1</option>
+			</select>
+		</td>
+	</tr>
+	</div>
+	<div class="form-group">
+	<tr>
+		<td><input class="form-control" type="text" name="artist_names[6]" required></td>
+		<td>
+			<select class="form-control" name="user_ratings[6]" required>
+				<option value="10">10</option>
+				<option value="9">9</option>
+				<option value="8">8</option>
+				<option value="7">7</option>
+				<option value="6">6</option>
+				<option value="5">5</option>
+				<option value="4">4</option>
+				<option value="3">3</option>
+				<option value="2">2</option>
+				<option value="1">1</option>
+			</select>
+		</td>
+	</tr>
+	</div>
+	<div class="form-group">
+	<tr>
+		<td><input class="form-control" type="text" name="artist_names[7]" required></td>
+		<td>
+			<select class="form-control" name="user_ratings[7]" required>
+				<option value="10">10</option>
+				<option value="9">9</option>
+				<option value="8">8</option>
+				<option value="7">7</option>
+				<option value="6">6</option>
+				<option value="5">5</option>
+				<option value="4">4</option>
+				<option value="3">3</option>
+				<option value="2">2</option>
+				<option value="1">1</option>
+			</select>
+		</td>
+	</tr>
+	</div>
+	<div class="form-group">
+	<tr>
+		<td><input class="form-control" type="text" name="artist_names[8]" required></td>
+		<td>
+			<select class="form-control" name="user_ratings[8]" required>
+				<option value="10">10</option>
+				<option value="9">9</option>
+				<option value="8">8</option>
+				<option value="7">7</option>
+				<option value="6">6</option>
+				<option value="5">5</option>
+				<option value="4">4</option>
+				<option value="3">3</option>
+				<option value="2">2</option>
+				<option value="1">1</option>
+			</select>
+		</td>
+	</tr>
+	</div>
+	<div class="form-group">
+	<tr>
+		<td><input class="form-control" type="text" name="artist_names[9]" required></td>
+		<td>
+			<select class="form-control" name="user_ratings[9]" required>
+				<option value="10">10</option>
+				<option value="9">9</option>
+				<option value="8">8</option>
+				<option value="7">7</option>
+				<option value="6">6</option>
+				<option value="5">5</option>
+				<option value="4">4</option>
+				<option value="3">3</option>
+				<option value="2">2</option>
+				<option value="1">1</option>
+			</select>
+		</td>
+	</tr>
+	</div>
+</table>
+<button type="submit" class="btn btn-default" id="submit_button">Submit</button>
+<br>
+</form>
+</div>
+</div>
+</body>
+</html>
+
+<!--<body>
+    <form method='POST'>
+        <H2>
+            Intersection 1
+        </h2>
+        <label>
+            East Light
+        </label>
+        <input type=text id='eastLightInt1' name='eastLightInt1' />
+        <label>
+            West Light
+        </label>
+    <input type=text id='westLightInt1' name='westLightInt1' />
+    <br />
+    <label>
+      North Light
+    </label>
+    <input type=text id='northLightInt1' name='northLightInt1' />
+    <label>
+      South Light
+    </label>
+    <input type=text id='southLightInt1' name='southLightInt1' />
+    <br />
+    <input type=submit value=Submit>
+  </form>
+  </body>-->
