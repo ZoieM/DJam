@@ -1,16 +1,17 @@
 <html>
 <head>
-	<!--Font-->
+	<!--Import Fonts-->
 	<link href="https://fonts.googleapis.com/css?family=Gugi|Lato" rel="stylesheet">
 	
 	<!--Device Width-->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<!--Bootstrap-->
+	<!--Bootstrap (CSS Reference)-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	
+	<!--Style Sheet-->
 	<style>
 		#submit_button {
 			background-color: purple;
@@ -41,9 +42,11 @@
 	
 </head>
 <body>
+<!--Page Title-->
 <div class="panel panel-default">
       <div class="panel-heading" id="title">DJam: Easy Music</div>
 </div>
+<!--About Section-->
 <div class="panel panel-default">
       <div class="panel-heading"><h2>About DJam</h2></div>
 	  <div class="panel-body">
@@ -63,6 +66,7 @@
 	  </p>
 	  </div>
 </div>
+<!--Form to Generate Playlist-->
 <div class="panel panel-default">
       <div class="panel-heading"><h2>Generate a Playlist</h2></div>
       <div class="panel-body">
@@ -74,6 +78,7 @@
 	</tr>
 	<div class="form-group">
 	<tr>
+		<!--1st artist and artist rating-->
 		<td><input class="form-control" type="text" name="artist_names[0]" required></td>
 		<td>
 			<select class="form-control" name="user_ratings[0]" required>
@@ -93,6 +98,7 @@
 	</div>
 	<div class="form-group">
 	<tr>
+		<!--2nd artist and artist rating-->
 		<td><input class="form-control" type="text" name="artist_names[1]" required></td>
 		<td>
 			<select class="form-control" name="user_ratings[1]" required>
@@ -112,6 +118,7 @@
 	</div>
 	<div class="form-group">
 	<tr>
+		<!--3rd artist and artist rating-->
 		<td><input class="form-control" type="text" name="artist_names[2]" required></td>
 		<td>
 			<select class="form-control" name="user_ratings[2]" required>
@@ -131,6 +138,7 @@
 	</div>
 	<div class="form-group">
 	<tr>
+		<!--4th artist and artist rating-->
 		<td><input class="form-control" type="text" name="artist_names[3]" required></td>
 		<td>
 			<select class="form-control" name="user_ratings[3]" required>
@@ -150,6 +158,7 @@
 	</div>
 	<div class="form-group">
 	<tr>
+		<!--5th artist and artist rating-->
 		<td><input class="form-control" type="text" name="artist_names[4]" required></td>
 		<td>
 			<select class="form-control" name="user_ratings[4]" required>
@@ -169,6 +178,7 @@
 	</div>
 	<div class="form-group">
 	<tr>
+		<!--6th artist and artist rating-->
 		<td><input class="form-control" type="text" name="artist_names[5]" required></td>
 		<td>
 			<select class="form-control" name="user_ratings[5]" required>
@@ -188,6 +198,7 @@
 	</div>
 	<div class="form-group">
 	<tr>
+		<!--7th artist and artist rating-->
 		<td><input class="form-control" type="text" name="artist_names[6]" required></td>
 		<td>
 			<select class="form-control" name="user_ratings[6]" required>
@@ -207,6 +218,7 @@
 	</div>
 	<div class="form-group">
 	<tr>
+		<!--8th artist and artist rating-->
 		<td><input class="form-control" type="text" name="artist_names[7]" required></td>
 		<td>
 			<select class="form-control" name="user_ratings[7]" required>
@@ -226,6 +238,7 @@
 	</div>
 	<div class="form-group">
 	<tr>
+		<!--9th artist and artist rating-->
 		<td><input class="form-control" type="text" name="artist_names[8]" required></td>
 		<td>
 			<select class="form-control" name="user_ratings[8]" required>
@@ -245,6 +258,7 @@
 	</div>
 	<div class="form-group">
 	<tr>
+		<!--10th artist and artist rating-->
 		<td><input class="form-control" type="text" name="artist_names[9]" required></td>
 		<td>
 			<select class="form-control" name="user_ratings[9]" required>
@@ -263,6 +277,7 @@
 	</tr>
 	</div>
 </table>
+<!--Submit Button-->
 <button type="submit" class="btn btn-default" id="submit_button">Submit</button>
 <br>
 </form>
@@ -270,30 +285,3 @@
 </div>
 </body>
 </html>
-
-<!--<body>
-    <form method='POST'>
-        <H2>
-            Intersection 1
-        </h2>
-        <label>
-            East Light
-        </label>
-        <input type=text id='eastLightInt1' name='eastLightInt1' />
-        <label>
-            West Light
-        </label>
-    <input type=text id='westLightInt1' name='westLightInt1' />
-    <br />
-    <label>
-      North Light
-    </label>
-    <input type=text id='northLightInt1' name='northLightInt1' />
-    <label>
-      South Light
-    </label>
-    <input type=text id='southLightInt1' name='southLightInt1' />
-    <br />
-    <input type=submit value=Submit>
-  </form>
-  </body>-->
