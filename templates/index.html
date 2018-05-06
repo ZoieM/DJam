@@ -3,9 +3,6 @@
 	<!--Import Fonts-->
 	<link href="https://fonts.googleapis.com/css?family=Gugi|Lato" rel="stylesheet">
 	
-	<!--Device Width-->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
 	<!--Bootstrap (CSS Reference)-->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -16,21 +13,24 @@
 		#submit_button {
 			background-color: purple;
 			color: white;
+			font-family: 'Lato', sans-serif;
+			font-size: 16;
 		}
 		div#title {
 			background-color: purple;
 			color: white;
 			font-family: 'Gugi', cursive;
-			font-size: 56
+			font-size: 56;
 		}
 		h2 {
 			font-family: 'Gugi', cursive;
-			font-size: 32
+			font-size: 32;
 		}
 		h4 {
 			font-weight: bold;
 			color: purple;
 			font-family: 'Lato', sans-serif;
+			font-size: 20;
 		}
 		p {
 			font-family: 'Lato', sans-serif;
@@ -38,34 +38,71 @@
 		form {
 			font-family: 'Lato', sans-serif;
 		}
+		
+		.flex-grid-halves {
+		  display: flex;
+		  justify-content: space-between;
+		}
+		
+		.flex-grid-halves .col-1 {
+		  width: 39%;
+		}
+		
+		.flex-grid-halves .col-2 {
+		  width: 59%;
+		}
+
+		@media (max-width: 700px) {
+		  .flex-grid,
+		  .flex-grid-halves {
+			display: block;
+			}
+			.flex-grid-halves .col-1 {
+			  width: 100%;
+			  margin: 0 0 0 0;
+			}
+			.flex-grid-halves .col-2 {
+			  width: 100%;
+			  margin: 0 0 0 0;
+			}
+		  }
+}
 	</style>
 	
 </head>
 <body>
+
 <!--Page Title-->
 <div class="panel panel-default">
       <div class="panel-heading" id="title">DJam: Easy Music</div>
 </div>
+
+
 <!--About Section-->
+<div class="flex-grid-halves">
+<div class="col-1">
 <div class="panel panel-default">
       <div class="panel-heading"><h2>About DJam</h2></div>
 	  <div class="panel-body">
 	  <h4>What is DJam?</h4>
 	  <p>
-		Blah blah blah blah blah blah blah. Blah blah blah blah blah blah blah. Blah blah blah blah blah blah blah.
-		Blah blah blah blah blah blah blah. Blah blah blah blah blah blah blah blah blah blah blah blah blah.
+		Use DJam to easily generate playlists from your favorite artists! Whether you want to listen to music
+		by yourself or with others, DJam makes it easy to generate a playlist that has songs from artists that
+		you know you already like.
+		<br><br>
+		DJam was developed in May 2018 by Navina Mathew, Priyank Varshney, and Zoie MacDougall.
 	  </p>
 	  <br>
 	  <h4>How does DJam work?</h4>
 	  <p>
-		Blah blah blah blah blah blah blah. Blah blah blah blah blah blah blah. Blah blah blah blah blah blah blah.
-		Blah blah blah blah blah blah blah. Blah blah blah blah blah blah blah blah blah blah blah blah blah.
-		Blah blah blah blah blah blah blah. Blah blah blah blah blah blah blah. Blah blah blah blah blah blah blah.
-		Blah blah blah blah blah blah blah. Blah blah blah blah blah blah blah blah blah blah blah blah blah.
-		Blah blah blah blah blah blah blah. Blah blah blah blah blah blah blah. Blah blah blah blah blah blah blah.
+		To use DJam, just enter the artists you like and, if you want, specify how much you like each artist&#8212;it's
+		that simple! Once you've entered the artists you'd like, DJam uses the music API last.fm to find popular songs
+		from each artist you'd like to listen to.
 	  </p>
 	  </div>
 </div>
+</div><!--End column-->
+<div class="col-2">
 <!--Form to Generate Playlist-->
 <div class="panel panel-default">
       <div class="panel-heading"><h2>Generate a Playlist</h2></div>
@@ -277,11 +314,14 @@
 	</tr>
 	</div>
 </table>
+<br>
 <!--Submit Button-->
 <button type="submit" class="btn btn-default" id="submit_button">Submit</button>
 <br>
 </form>
 </div>
 </div>
+</div><!--End column-->
+</div><!--End container-->
 </body>
 </html>
