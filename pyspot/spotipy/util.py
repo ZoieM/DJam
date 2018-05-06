@@ -6,8 +6,8 @@ import os
 from . import oauth2
 import spotipy
 
-def prompt_for_user_token(username, scope=None, client_id = None,
-        client_secret = None, redirect_uri = None, cache_path = None):
+def prompt_for_user_token(username, scope=None, client_id = '0281577f5b0c498f85bfcd13e3687aff',
+        client_secret = 'c497ede7ddfa413bb050ba00d00a1222', redirect_uri = "http://localhost:8888/callback", cache_path = None):
     ''' prompts the user to login if necessary and returns
         the user token suitable for use with the spotipy.Spotify 
         constructor

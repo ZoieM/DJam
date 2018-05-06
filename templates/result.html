@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+	<head>
+		
+	</head>
+	<body>
+		<h1>Your Artist Ratings</h1>
+		<table class = table>
+		 {% for key, value in result.iteritems() %}
+		 <tr>
+			<th>{{ key }}</th>
+			{% for index in value %}
+			<td>{{ value[index] }}</td>
+			{% endfor %}
+		 </tr>
+		 {% endfor %}
+		</table>
+		<br>
+		<h2>We Collected Your Results as a Dictionary</h2>
+		<code>{{ result }}</code>
+   </body>
+</html>
