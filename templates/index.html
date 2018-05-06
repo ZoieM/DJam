@@ -14,26 +14,33 @@
 			background-color: purple;
 			color: white;
 			font-family: 'Lato', sans-serif;
-			font-size: 16;
+			font-size: 20;
 		}
 		div#title {
 			background-color: purple;
 			color: white;
 			font-family: 'Gugi', cursive;
-			font-size: 56;
+			font-size: 66;
+		}
+		div#footer {
+			background-color: purple;
+			color: white;
+			font-family: 'Gugi', cursive;
+			font-size: 18;
 		}
 		h2 {
 			font-family: 'Gugi', cursive;
-			font-size: 32;
+			font-size: 36;
 		}
 		h4 {
 			font-weight: bold;
 			color: purple;
 			font-family: 'Lato', sans-serif;
-			font-size: 20;
+			font-size: 26;
 		}
 		p {
 			font-family: 'Lato', sans-serif;
+			font-size: 16;
 		}
 		form {
 			font-family: 'Lato', sans-serif;
@@ -66,18 +73,30 @@
 			  margin: 0 0 0 0;
 			}
 		  }
-}
+		 .Site {
+		  display: flex;
+		  min-height: 100vh;
+		  flex-direction: column;
+		}
+
+		.Site-content {
+		  flex: 1;
+		}
+		
 	</style>
 	
 </head>
-<body>
+<body class="Site">
+
 
 <!--Page Title-->
+<header>
 <div class="panel panel-default">
       <div class="panel-heading" id="title">DJam: Easy Music</div>
 </div>
+</header>
 
-
+<main class="Site-content">
 <!--About Section-->
 <div class="flex-grid-halves">
 <div class="col-1">
@@ -107,6 +126,9 @@
 <div class="panel panel-default">
       <div class="panel-heading"><h2>Generate a Playlist</h2></div>
       <div class="panel-body">
+	  <p>To generate a playlist, enter the names of ten artists and indicate how much you like each artist.
+	  When you're done, just click "Submit" and DJam will display your generated playlist.</p>
+	  <p><b>Note:</b> Give 10's to your favorite artists, and give 1's to your least favorite artists.</p>
 <form action = "http://localhost:5000/result" method="POST">
 <table>
 	<tr>
@@ -317,11 +339,15 @@
 <br>
 <!--Submit Button-->
 <button type="submit" class="btn btn-default" id="submit_button">Submit</button>
-<br>
 </form>
 </div>
 </div>
 </div><!--End column-->
 </div><!--End container-->
+</main>
+
+<footer>
+<div class="panel-heading" id="footer">Developed in May 2018 by Navina Mathew • Priyank Varshney • Zoie MacDougall</div>
+</footer>
 </body>
 </html>

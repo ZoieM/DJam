@@ -1,22 +1,153 @@
-<!doctype html>
 <html>
-	<head>
+<head>
+	<!--Import Fonts-->
+	<link href="https://fonts.googleapis.com/css?family=Gugi|Lato" rel="stylesheet">
+	
+	<!--Bootstrap (CSS Reference)-->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	<!--Style Sheet-->
+	<style>
+		#submit_button {
+			background-color: purple;
+			color: white;
+			font-family: 'Lato', sans-serif;
+			font-size: 20;
+		}
+		div#title {
+			background-color: purple;
+			color: white;
+			font-family: 'Gugi', cursive;
+			font-size: 66;
+		}
+		div#footer {
+			background-color: purple;
+			color: white;
+			font-family: 'Gugi', cursive;
+			font-size: 18;
+		}
+		h2 {
+			font-family: 'Gugi', cursive;
+			font-size: 36;
+		}
+		h4 {
+			font-weight: bold;
+			color: purple;
+			font-family: 'Lato', sans-serif;
+			font-size: 26;
+		}
+		p {
+			font-family: 'Lato', sans-serif;
+			font-size: 16;
+		}
+		form {
+			font-family: 'Lato', sans-serif;
+		}
 		
-	</head>
-	<body>
-		<h1>Your Artist Ratings</h1>
-		<table class = table>
-		 {% for key, value in result.iteritems() %}
-		 <tr>
-			<th>{{ key }}</th>
-			{% for index in value %}
-			<td>{{ value[index] }}</td>
-			{% endfor %}
-		 </tr>
-		 {% endfor %}
-		</table>
-		<br>
-		<h2>We Collected Your Results as a Dictionary</h2>
-		<code>{{ result }}</code>
-   </body>
+		.flex-grid-halves {
+		  display: flex;
+		  justify-content: space-between;
+		}
+		
+		.flex-grid-halves .col-1 {
+		  width: 44%;
+		}
+		
+		.flex-grid-halves .col-2 {
+		  width: 54%;
+		}
+
+		@media (max-width: 700px) {
+		  .flex-grid,
+		  .flex-grid-halves {
+			display: block;
+			}
+			.flex-grid-halves .col-1 {
+			  width: 100%;
+			  margin: 0 0 0 0;
+			}
+			.flex-grid-halves .col-2 {
+			  width: 100%;
+			  margin: 0 0 0 0;
+			}
+		  }
+		 .Site {
+		  display: flex;
+		  min-height: 100vh;
+		  flex-direction: column;
+		}
+
+		.Site-content {
+		  flex: 1;
+		}
+		
+	</style>
+	
+</head>
+<body class = "Site">
+
+
+<!--Page Title-->
+<header>
+<div class="panel panel-default">
+      <div class="panel-heading" id="title">DJam: Easy Music</div>
+</div>
+</header>
+
+<main class="Site-content">
+<!--About Section-->
+<div class="flex-grid-halves">
+<div class="col-2">
+<div class="panel panel-default">
+      <div class="panel-heading"><h2>Playlist</h2></div>
+	  <div class="panel-body">
+		<p>Here are the songs we picked out for you:</p>
+				<br>
+				  <table class = "table">
+					 {% for key, value in result.iteritems() %}
+					 <tr>
+						<th>{{ key }}</th>
+						{% for index in value %}
+						<td>{{ value[index] }}</td>
+						{% endfor %}
+					 </tr>
+					 {% endfor %}
+				</table>
+				<br>
+				<br>
+				<code>{{ result }}</code>
+				<br>
+	  </div>
+</div>
+</div><!--End column-->
+<div class="col-1">
+<!--Form to Generate Playlist-->
+<div class="panel panel-default">
+      <div class="panel-heading"><h2>Top Hits</h2></div>
+      <div class="panel-body">
+		<p>Here is the playlist we made for you:</p>
+			  <br>
+				  <table class = "table">
+					 {% for key, value in result.iteritems() %}
+					 <tr>
+						<th>{{ key }}</th>
+						{% for index in value %}
+						<td>{{ value[index] }}</td>
+						{% endfor %}
+					 </tr>
+					 {% endfor %}
+				</table>
+				<br>
+	</div>
+</div>
+</div><!--End column-->
+</div><!--End container-->
+</main>
+
+<footer>
+<div class="panel-heading" id="footer">Developed in May 2018 by Navina Mathew • Priyank Varshney • Zoie MacDougall</div>
+</footer>
+</body>
 </html>
