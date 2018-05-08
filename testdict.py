@@ -5,6 +5,30 @@ app = Flask(__name__)
 def student():
    return render_template('index.html')
 
+#class to intialize Stack
+class Stack:
+    def __init__(self):
+        self.items = []
+
+    def push(self, item):
+        self.items.append(item)
+
+    def pop(self):
+        return self.items.pop()
+
+    def size(self):
+        return len(self.items)
+
+    def check_recent(self, victim):
+        if victim in self.items:
+            return True
+        else: 
+            return False
+    
+    def print_items(self):
+        for i in self.items:
+            print(i)
+
 
 #helper function for quicksort
 def partition(song_list,start,end):
