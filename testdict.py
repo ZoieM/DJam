@@ -5,6 +5,16 @@ app = Flask(__name__)
 def student():
    return render_template('index.html')
 
+class ItemTable(Table):
+    song_name = Col('Song Name')
+    artist = Col('Artist')
+
+class Item(object):
+    def __init__(self, song_name, artist):
+        self.song_name = song_name
+        self.artist = artist
+
+
 class Artist: 
     def __init__(self, artist_name, artist_rate):
       self.artist_name = artist_name
