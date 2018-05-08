@@ -78,6 +78,45 @@ def get_sorted_songs(song_list):
 
     return res
 
+def shuffle_sort(song_list):
+    song_queue = queue.Queue()
+    recently_added = Stack()
+    increment_count = 0
+    
+    while(increment_count < 20):
+        end = (len(song_list) - 1)
+        print(end)
+        rand_index = random.randint(0, end)
+        print(rand_index)
+
+        if recently_added.check_recent(song_list[rand_index][0].artist_name):
+            increment_count = increment_count + 1
+            pass
+        else:
+            increment_count = 0 
+            song_queue.put(song_list[rand_index])
+            recently_added.push(song_list[rand_index][0].artist_name)
+            song_list.remove(song_list[rand_index])
+            recently_added.print_items()
+            if recently_added.size() > 4:
+                recently_added.pop()
+    
+    while(len(song_list) != 0):
+        end = (len(song_list) - 1)
+        rand_index = random.randint(0, end)
+        song_queue.put(song_list[rand_index])
+        song_list.remove(song_list[rand_index])
+       
+    final_list = []
+    while(song_queue.empty() != True):
+        final_list.append(song_queue.get())
+
+    for artist in final_list:
+        print(artist[0].artist_name)
+    print(len(final_list))
+
+    return final_list
+
 def parse_multi_form(form):
     data = {}
     for url_k in form:
@@ -108,12 +147,50 @@ def parse_multi_form(form):
             else:
                 if isinstance(sub_data, dict):
                     sub_data[k] = v
+    data_l = []
+    for key, val in data.items(): 
+        data_l.append(val)     
+    
+    artist_list = []    
+    for i in range(0,10):
+        artist = data_l[0][i]
+        processed_text = artist.replace(" ", "")
+        artist_list.append(artist)
+    
+    artist_info = []
+    for value in form.items():
+        artist_info.append(value)
+    print(artist_info)
+
+    artist_ratings = []
+    for value in artist_info:
+        if value[1].isdigit():
+            artist_ratings.append(value[1])
+    print(artist_ratings)
+
+
     info_list = []
     for i, artist in enumerate(artist_list): 
         for x, songs in enumerate(last_fm_api(artist)):
             info_list.append((Artist(artist_name= artist, artist_rate= artist_ratings[i]),Song(song_name= songs, song_rate= ((10 -x) + int(artist_ratings[i])))))
     
     result = []
+
+    sorted_songs = info_list.copy()
+    shuffled = info_list.copy()
+
+    end = len(sorted_songs) - 1
+    quickSort(sorted_songs, 0, end)
+
+    shuffled = shuffle_sort(shuffled)
+
+    temp = get_sorted_songs(sorted_songs)
+
+    table_sorted = generate_table(temp) 
+    table_shuffled = generate_table(shuffled)  
+    
+    result.append(table_sorted)
+    result.append(table_shuffled)
 
     return result
    
