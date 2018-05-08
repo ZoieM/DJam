@@ -108,8 +108,14 @@ def parse_multi_form(form):
             else:
                 if isinstance(sub_data, dict):
                     sub_data[k] = v
+    info_list = []
+    for i, artist in enumerate(artist_list): 
+        for x, songs in enumerate(last_fm_api(artist)):
+            info_list.append((Artist(artist_name= artist, artist_rate= artist_ratings[i]),Song(song_name= songs, song_rate= ((10 -x) + int(artist_ratings[i])))))
+    
+    result = []
 
-    return data
+    return result
    
 @app.route('/result',methods = ['POST', 'GET'])
 def result():
