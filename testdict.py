@@ -5,6 +5,16 @@ app = Flask(__name__)
 def student():
    return render_template('index.html')
 
+class Artist: 
+    def __init__(self, artist_name, artist_rate):
+      self.artist_name = artist_name
+      self.artist_rate = artist_rate
+
+class Song: 
+    def __init__(self, song_name, song_rate):
+      self.song_name = song_name
+      self.song_rate = song_rate
+
 #class to intialize Stack
 class Stack:
     def __init__(self):
