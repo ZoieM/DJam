@@ -1,8 +1,9 @@
 from flask import Flask, render_template, request
 from flask_table import Table, Col
-import urllib.request
+import urllib
 import json
-import queue
+import requests
+from multiprocessing import Queue
 import random
 app = Flask(__name__)
 
