@@ -146,6 +146,17 @@ def shuffle_sort(song_list):
 
     return final_list
 
+def generate_table(song_list): 
+
+    items = []
+    for song in song_list:
+        items.append(Item(song[1].song_name, song[0].artist_name))
+        
+    # Populate the table
+    table = ItemTable(items)
+
+    return table
+
 def parse_multi_form(form):
     data = {}
     for url_k in form:
