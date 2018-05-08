@@ -71,6 +71,20 @@ def partition(song_list,start,end):
     song_list[i+1],song_list[end] = song_list[end],song_list[i+1]
     return ( i+1 )
  
+def last_fm_api(artist_name):
+    song_list = []
+    top_10 = []
+    response = urllib.request.urlopen('http://ws.audioscrobbler.com/2.0/?method=artist.gettoptracks&artist=%s&api_key=dada99edffec765b19defc4cdcecc5cd&format=json' % artist_name)
+    data = response.read()
+    encoding = response.info().get_content_charset('utf-8')
+    result = json.loads(data.decode(encoding))
+    songs = result['toptracks']['track']
+    for i, song in enumerate(songs):
+        name = result['toptracks']['track'][i]['name']
+        song_list.append(name)
+
+    top_10 = song_list[0:10]
+    return top_10
  
 # Function to do Quick sort
 def quickSort(song_list,start,end):
