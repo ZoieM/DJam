@@ -58,7 +58,6 @@
 		.flex-grid-halves .col-2 {
 		  width: 54%;
 		}
-
 		@media (max-width: 700px) {
 		  .flex-grid,
 		  .flex-grid-halves {
@@ -78,7 +77,6 @@
 		  min-height: 100vh;
 		  flex-direction: column;
 		}
-
 		.Site-content {
 		  flex: 1;
 		}
@@ -106,18 +104,10 @@
 		<p>Here are the songs we picked out for you:</p>
 				<br>
 				  <table class = "table">
-					 {% for key, value in result.iteritems() %}
-					 <tr>
-						<th>{{ key }}</th>
-						{% for index in value %}
-						<td>{{ value[index] }}</td>
-						{% endfor %}
-					 </tr>
-					 {% endfor %}
+					{{ result[1] }}
 				</table>
 				<br>
-				<br>
-				<code>{{ result }}</code>
+			
 				<br>
 	  </div>
 </div>
@@ -130,14 +120,7 @@
 		<p>Here is the playlist we made for you:</p>
 			  <br>
 				  <table class = "table">
-					 {% for key, value in result.iteritems() %}
-					 <tr>
-						<th>{{ key }}</th>
-						{% for index in value %}
-						<td>{{ value[index] }}</td>
-						{% endfor %}
-					 </tr>
-					 {% endfor %}
+					 {{ result[0] }}
 				</table>
 				<br>
 	</div>
