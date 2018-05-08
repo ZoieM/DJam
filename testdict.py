@@ -5,6 +5,45 @@ app = Flask(__name__)
 def student():
    return render_template('index.html')
 
+
+#helper function for quicksort
+def partition(song_list,start,end):
+    i = ( start-1 )
+    pivot = song_list[end][1].song_rate    
+ 
+    for j in range(start , end):
+ 
+     
+        if song_list[j][1].song_rate <= pivot: #compare element to see if smaller
+         
+            i = i+1 #increment index
+            song_list[i], song_list[j] = song_list[j],song_list[i]
+ 
+    song_list[i+1],song_list[end] = song_list[end],song_list[i+1]
+    return ( i+1 )
+ 
+ 
+# Function to do Quick sort
+def quickSort(song_list,start,end):
+    if start < end:
+ 
+        p = partition(song_list,start,end) #partitions the index at a specific point
+ 
+        #sorting the elements before and after partition
+        quickSort(song_list, start, p-1)
+        quickSort(song_list, p+1, end)
+
+def get_sorted_songs(song_list):
+    res = []
+    song_ordered = Stack()
+    for song in song_list:
+        song_ordered.push(song)
+    
+    for i, x in enumerate(song_list):
+        res.append(song_ordered.pop())
+
+    return res
+
 def parse_multi_form(form):
     data = {}
     for url_k in form:
